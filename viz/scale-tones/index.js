@@ -14,7 +14,7 @@ function init() {
     let note = null;
     let $el = document.querySelector(".frequency");
 
-    let synth = new Tone.FMSynth().toDestination();
+    let synth = new Tone.Synth().toDestination();
 
     const now = Tone.now();
     let t = 0.0;

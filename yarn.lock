@@ -76,6 +76,11 @@ tslib@^2.0.1:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
   integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 
+vis-network@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/vis-network/-/vis-network-8.2.0.tgz#c35cb6c15951c890b7ba9581e1f892c7c5b882d4"
+  integrity sha512-2fnI4jINbluGT0MmZoIk0XkYLRFPvEbTbhP0A1xUYhbUiO28ARhlIMfR3Z3I4eaEo/E0lGVZYWH+2DWyohG0tw==
+
 vis@^4.21.0-EOL:
   version "4.21.0-EOL"
   resolved "https://registry.yarnpkg.com/vis/-/vis-4.21.0-EOL.tgz#e397085d439de6f6ff1f3c46287e5bef51b47b03"

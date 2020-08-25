@@ -111,8 +111,6 @@ function draw() {
         },
     };
 
-    console.log("data:", container, data, options);
-
     network = new vis.Network(container, data, options);
 }
 
@@ -128,7 +126,19 @@ function init() {
     let note = null;
     let $el = document.querySelector(".frequency");
 
-    let synth = new Tone.FMSynth().toDestination();
+    let synth = new Tone.Synth({
+        envelope: {
+            attack: 0.05,
+            attackCurve: "exponential",
+            decay: 0.2,
+            decayCurve: "exponential",
+            release: 0.1,
+            releaseCurve: "exponential",
+            sustain: 0.2,
+        },
+    }).toDestination();
+
+    // synth.maxPolyphony = 1;
 
     const now = Tone.now();
     let t = 0.0;
