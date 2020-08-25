@@ -77,7 +77,7 @@ class: center, middle
 
 class: center, middle
 
-iframeURL: /public/sqcr-demo/html/scale-tones.html
+iframeURL: /viz/scale-tones/index.html
 iframeSelector: .scale-tones-frame
 
 ### Random Tones from a Scale
