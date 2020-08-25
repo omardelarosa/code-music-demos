@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "tone": "^14.7.39"
+    "tone": "^14.7.39",
+    "vis": "^4.21.0-EOL"
   }
 }

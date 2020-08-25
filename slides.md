@@ -120,7 +120,7 @@ _A Markov chain is "a stochastic model describing a sequence of possible events 
 ---
 
 class: center, top
-iframeURL: /public/sqcr-demo/html/notes-graph.html
+iframeURL: /viz/notes-graph/index.html
 iframeSelector: .scale-tones-graph-frame
 
 #### Markov Chaining of Tones in a Scale
