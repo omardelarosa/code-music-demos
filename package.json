@@ -1,12 +1,13 @@
 {
-  "name": "code-music",
-  "version": "1.0.0",
-  "description": "presentation on code and music",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "tone": "^14.7.39",
-    "vis": "^4.21.0-EOL",
-    "vis-network": "^8.2.0"
-  }
+    "name": "code-music",
+    "version": "1.0.0",
+    "description": "presentation on code and music",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "serve": "^11.3.2"
+    },
+    "scripts": {
+        "start": "serve public/"
+    }
 }
