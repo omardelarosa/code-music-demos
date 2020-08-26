@@ -36,11 +36,12 @@ export const kicks = [
 
 export const hats = [
     [16, 4],
+    [16, 4],
     [12, 3],
     [24, 6],
-    [32, 4],
-    [48, 6],
-    [64, 8],
+    [32, 8],
+    [48, 12],
+    [64, 16],
 ];
 
 // Create markov chain for hats
