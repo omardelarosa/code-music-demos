@@ -1,5 +1,5 @@
 class: center, middle
-iframeURL: /public/sqcr-demo/html/808.html
+iframeURL: /demos/808/index.html
 iframeSelector: .frame-808-1
 
 # Making Self-Generating Hip Hop in JS
@@ -271,18 +271,6 @@ iframeSelector: .frame-808
 
 ---
 
-class: middle, center
-iframeURL: /public/sqcr-demo/html/akai.html
-iframeSelector: .frame-akai
-
-### Akai MPC-2000XL
-
-#### A classic sampler for hip hop production
-
-<iframe src="/blank.html" width="80%" height="80%" class="frame-akai" frameborder="0"></iframe>
-
----
-
 # Rhythm and Computation
 
 #### Beat Grids
@@ -303,10 +291,10 @@ iframeSelector: .frame-akai
 
 ```javascript
 // 16-element arrays can represent rhythm patterns, but are tough to read.
-const kicks   = [1,0,1,0,  0,0,1,0,  0,0,1,0,  0,0,1,0]; // prettier-ignore
-const snares  = [0,0,0,0,  1,0,0,0,  0,0,0,0,  1,0,0,0]; // prettier-ignore
-const hats    = [1,1,1,1,  1,1,1,1,  1,1,1,1,  1,1,1,1]; // prettier-ignore
-const cowbell = [0,0,0,0,  0,0,0,0,  0,0,0,0,  1,0,1,0]; // prettier-ignore
+const kicks   = [1,0,1,0,  0,0,1,0,  0,0,1,0,  0,0,1,0];
+const snares  = [0,0,0,0,  1,0,0,0,  0,0,0,0,  1,0,0,0];
+const hats    = [1,1,1,1,  1,1,1,1,  1,1,1,1,  1,1,1,1];
+const cowbell = [0,0,0,0,  0,0,0,0,  0,0,0,0,  1,0,1,0];
 ```
 
 ---
@@ -317,10 +305,10 @@ const cowbell = [0,0,0,0,  0,0,0,0,  0,0,0,0,  1,0,1,0]; // prettier-ignore
 
 ```javascript
 // Easier to read, CPU-trivial preprocessing
-const kicks   = fmt('1010 0010 0010 0010'); // prettier-ignore
-const snares  = fmt('0000 1000 0000 1000'); // prettier-ignore
-const hats    = fmt('1111 1111 1111 1111'); // prettier-ignore
-const cowbell = fmt('0000 0000 0000 01010'); // prettier-ignore
+const kicks   = fmt('1010 0010 0010 0010');
+const snares  = fmt('0000 1000 0000 1000');
+const hats    = fmt('1111 1111 1111 1111');
+const cowbell = fmt('0000 0000 0000 01010');
 ```
 
 ---

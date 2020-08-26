@@ -19,8 +19,7 @@
     --code-text-color: #ffffff;
 }
 
-body,
-div {
+body {
     font-family: "Arimo", sans-serif;
     color: var(--main-text-color);
     background-color: var(--main-bg-color);
@@ -44,6 +43,7 @@ h3 {
 }
 .remark-code,
 .remark-inline-code {
+    font-size: 0.8em;
     font-family: "Roboto Mono", monospace;
     background-color: var(--code-bg-color);
     color: var(--code-text-color);
