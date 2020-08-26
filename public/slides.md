@@ -383,7 +383,7 @@ class: center, middle
 ---
 
 class: center, top
-iframeURL: /public/sqcr-demo/html/notes-graph.html
+iframeURL: /demos/notes-graph/index.html
 iframeSelector: .scale-tones-graph-frame2
 
 #### Markov Chaining of Tones in a Scale
@@ -396,7 +396,7 @@ Avoid talking over synths
 ---
 
 class: center, top
-iframeURL: /public/sqcr-demo/html/chords-graph.html
+iframeURL: /demos/chords-graph/index.html
 iframeSelector: .scale-chords-graph-frame
 
 #### Markov Chaining of Chords in a Scale
@@ -409,7 +409,7 @@ Avoid talking over synths
 ---
 
 class: center, top
-iframeURL: /public/sqcr-demo/html/beats-graph.html
+iframeURL: /demos/beats-graph/index.html
 iframeSelector: .beats-graph-frame
 
 #### Markov Chaining of Beat Durations

@@ -1,37 +1,30 @@
-import { MarkovChain } from "../../lib/Markov.js";
 import {
     bindAudioListener,
     DEFAULT_PLAY_BUTTON_SELECTOR,
 } from "../../lib/common/audio-context-listener.js";
+import { createInstruments } from "../../lib/sqcr-demo/instruments.js";
+import { NOTE_HAT, hats, MC_HATS, _sample } from "../../lib/sqcr-demo/utils.js";
 import { DEFAULT_SEQUENCE_BPM } from "../../lib/common/constants.js";
 
-const NOTES = ["C4", "D4", "E4", "F4", "G4", "A4", "B4"];
+const HATS_STR = hats.map((a) => `1/${a[0]} note`);
+const G = {
+    0: [0, 0, 0, 0, 0, 0, 1, 2, 3, 4],
+    1: [0, 0, 0, 3],
+    2: [0, 0, 0, 3],
+    3: [2, 5],
+    4: [2, 3, 4, 1],
+    5: [3, 2, 4, 2, 2],
+};
 
 let nodes = null;
 let edges = null;
 let network = null;
-let selectedNodeId = null;
 
-function rand() {
-    return NOTES[Math.round(Math.random() * (NOTES.length - 1))];
-}
-
-// Graph
-const G = {
-    0: [0, 0, 2, 4],
-    1: [1, 1, 3, 5],
-    2: [2, 2, 4, 6],
-    3: [4],
-    4: [4, 0],
-    5: [0],
-    6: [1, 0],
-};
-
-const MC = new MarkovChain(G, NOTES, 0);
+const instruments = createInstruments();
 
 // create an array with nodes
 function makeNodes(obj, labels) {
-    const nodeStyle = {
+    var nodeStyle = {
         font: {
             color: "#000000",
             face: "sans-serif",
@@ -95,67 +88,55 @@ function makeEdges(obj) {
 }
 
 function draw() {
-    nodes = makeNodes(G, NOTES);
+    nodes = makeNodes(G, HATS_STR);
 
     edges = makeEdges(G);
 
     // create a network
-    const container = document.getElementById("graph");
-    const data = {
+    var container = document.getElementById("graph");
+    var data = {
         nodes: nodes,
         edges: edges,
     };
-    const options = {
+    var options = {
         nodes: {
             shape: "dot",
             size: 10,
         },
     };
-
     network = new vis.Network(container, data, options);
 }
 
-function init() {
-    bindAudioListener(DEFAULT_PLAY_BUTTON_SELECTOR);
+draw();
 
-    draw();
+network.fit(nodes.map((n) => n.id));
 
-    network.fit(nodes.map((n) => n.id));
+network.selectNodes([MC_HATS.peekID()]);
 
-    network.selectNodes([MC.peekID()]);
+const loop_hats = new Tone.Loop((time) => {
+    // Hi-hats
+    let nid = MC_HATS.peekID();
+    network.selectNodes([nid]);
+    let hats_pattern = hats[nid];
+    let num_beats = hats_pattern[1];
+    let note_duration = hats_pattern[0];
+    const note = Tone.Time(4 / note_duration).toNotation();
 
-    let note = null;
-    let $el = document.querySelector(".frequency");
+    for (let i = 0; i < num_beats; i++) {
+        let scheduled_time =
+            time + Tone.Time(4 / note_duration).toSeconds() * i;
+        instruments.sampler.triggerAttackRelease(
+            NOTE_HAT,
+            note,
+            scheduled_time
+        );
+    }
 
-    let synth = new Tone.Synth({
-        envelope: {
-            attack: 0.05,
-            attackCurve: "exponential",
-            decay: 0.2,
-            decayCurve: "exponential",
-            release: 0.1,
-            releaseCurve: "exponential",
-            sustain: 0.2,
-        },
-    }).toDestination();
+    MC_HATS.next();
+}, "4n").start(0);
 
-    // synth.maxPolyphony = 1;
+Tone.Transport.start();
 
-    const now = Tone.now();
-    let t = 0.0;
-    const loop = new Tone.Loop((time) => {
-        // triggered every eighth note.
-        selectedNodeId = MC.nextID();
-        network.selectNodes([selectedNodeId]);
-        note = NOTES[selectedNodeId];
-        synth.triggerAttackRelease(note, "8m");
-    }, "4n").start(0);
+Tone.Transport.bpm.value = DEFAULT_SEQUENCE_BPM;
 
-    Tone.Transport.start();
-
-    Tone.Transport.bpm.value = DEFAULT_SEQUENCE_BPM;
-}
-
-(function () {
-    init();
-})();
+bindAudioListener(DEFAULT_PLAY_BUTTON_SELECTOR);

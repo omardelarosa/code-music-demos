@@ -1,8 +1,5 @@
 import { MarkovChain } from "../Markov.js";
 
-// setTempo(60);
-// sqcr.stop();
-
 // Global pulse counter
 let M = 1.0;
 let pulse = 0;

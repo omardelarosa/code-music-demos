@@ -5,7 +5,32 @@ import {
 } from "../../lib/common/audio-context-listener.js";
 import { DEFAULT_SEQUENCE_BPM } from "../../lib/common/constants.js";
 
-const NOTES = ["C4", "D4", "E4", "F4", "G4", "A4", "B4"];
+const CHORDS = [
+    "C Major",
+    "D minor",
+    "E minor",
+    "F major",
+    "G major",
+    "A minor",
+    "B diminished",
+];
+
+const NOTES = [
+    "C4",
+    "D4",
+    "E4",
+    "F4",
+    "G4",
+    "A4",
+    "B4",
+    "C4",
+    "D4",
+    "E4",
+    "F4",
+    "G4",
+    "A4",
+    "B4",
+];
 
 let nodes = null;
 let edges = null;
@@ -13,18 +38,18 @@ let network = null;
 let selectedNodeId = null;
 
 function rand() {
-    return NOTES[Math.round(Math.random() * (NOTES.length - 1))];
+    return CHORDS[Math.round(Math.random() * (CHORDS.length - 1))];
 }
 
 // Graph
 const G = {
-    0: [0, 0, 2, 4],
-    1: [1, 1, 3, 5],
-    2: [2, 2, 4, 6],
-    3: [4],
-    4: [4, 0],
-    5: [0],
-    6: [1, 0],
+    0: [3, 3, 3, 5],
+    1: [2, 5],
+    2: [3],
+    3: [4, 4, 4, 1, 1],
+    4: [0, 0, 0, 5],
+    5: [1, 6],
+    6: [4],
 };
 
 const MC = new MarkovChain(G, NOTES, 0);
@@ -95,7 +120,7 @@ function makeEdges(obj) {
 }
 
 function draw() {
-    nodes = makeNodes(G, NOTES);
+    nodes = makeNodes(G, CHORDS);
 
     edges = makeEdges(G);
 
@@ -127,16 +152,20 @@ function init() {
     let note = null;
     let $el = document.querySelector(".frequency");
 
-    let synth = new Tone.Synth({
-        envelope: {
-            attack: 0.05,
-            attackCurve: "exponential",
-            decay: 0.2,
-            decayCurve: "exponential",
-            release: 0.1,
-            releaseCurve: "exponential",
-            sustain: 0.2,
+    let synth = new Tone.PolySynth({
+        oscillator: {
+            type: "amtriangle",
+            harmonicity: 0.5,
+            modulationType: "sine",
         },
+        envelope: {
+            attackCurve: "exponential",
+            attack: 0.05,
+            decay: 0.2,
+            sustain: 0.2,
+            release: 1.5,
+        },
+        portamento: 0.05,
     }).toDestination();
 
     // synth.maxPolyphony = 1;
@@ -148,7 +177,12 @@ function init() {
         selectedNodeId = MC.nextID();
         network.selectNodes([selectedNodeId]);
         note = NOTES[selectedNodeId];
-        synth.triggerAttackRelease(note, "8m");
+        const notes = [
+            note,
+            NOTES[selectedNodeId + 2],
+            NOTES[selectedNodeId + 4],
+        ];
+        synth.triggerAttackRelease(notes, "8n");
     }, "4n").start(0);
 
     Tone.Transport.start();

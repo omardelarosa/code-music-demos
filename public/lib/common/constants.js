@@ -1,0 +1,2 @@
+export const DEFAULT_SEQUENCE_BPM = 60;
+export const DEFAULT_GRID_RESOLUTION = 16;

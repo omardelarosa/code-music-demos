@@ -4,24 +4,23 @@ import {
 } from "../../lib/common/audio-context-listener.js";
 import { createInstruments } from "../../lib/sqcr-demo/instruments.js";
 import {
+    DEFAULT_SEQUENCE_BPM,
+    DEFAULT_GRID_RESOLUTION,
+} from "../../lib/common/constants.js";
+import {
     NOTE_KICK,
     NOTE_CLAP,
-    NOTE_SNARE,
+    // NOTE_SNARE,
     NOTE_HAT,
-    DRAKE,
-    THUG,
-    beatFromTick,
+    // DRAKE,
+    // THUG,
+    // beatFromTick,
     kicks,
     snares,
     hats,
     MC_HATS,
     _sample,
 } from "../../lib/sqcr-demo/utils.js";
-
-console.log("Tonal", Tonal);
-
-const DEFAULT_BPM = 60;
-const GRID_RESOLUTION = 16;
 
 const instruments = createInstruments();
 
@@ -32,7 +31,7 @@ const loop_kicks = new Tone.Loop(
         let kick_pattern = _sample(kicks);
         let snares_pattern = _sample(snares);
         return (time) => {
-            let t = tick % GRID_RESOLUTION;
+            let t = tick % DEFAULT_GRID_RESOLUTION;
             // Randomly switch pattern on the 0
             if (t === 0) kick_pattern = _sample(kicks);
             if (kick_pattern[t]) {
@@ -74,6 +73,6 @@ const loop_hats = new Tone.Loop((time) => {
 
 Tone.Transport.start();
 
-Tone.Transport.bpm.value = DEFAULT_BPM;
+Tone.Transport.bpm.value = DEFAULT_SEQUENCE_BPM;
 
 bindAudioListener(DEFAULT_PLAY_BUTTON_SELECTOR);
