@@ -2,12 +2,12 @@ import {
     bindAudioListener,
     DEFAULT_PLAY_BUTTON_SELECTOR,
 } from "../../lib/common/audio-context-listener.js";
+import { DEFAULT_SEQUENCE_BPM } from "../../lib/common/constants.js";
 
 function init() {
     bindAudioListener(DEFAULT_PLAY_BUTTON_SELECTOR);
 
     let note = null;
-    let duration = 500;
     let $el = document.querySelector(".frequency");
 
     function rand() {
@@ -39,12 +39,15 @@ function init() {
         note = rand();
         t += 0.5;
         // console.log("now: ", now);
-        synth.triggerAttackRelease(note, time);
+        synth.triggerAttackRelease(note, "8n");
         $el.innerHTML = `${Math.round(
             new Tone.Frequency(note, "midi").valueOf()
         )}hz`;
-    }, "8n").start(0);
+    }, "4n").start(0);
+
     Tone.Transport.start();
+
+    Tone.Transport.bpm.value = DEFAULT_SEQUENCE_BPM;
 }
 
 (function () {

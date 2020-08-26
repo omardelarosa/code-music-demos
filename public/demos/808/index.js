@@ -24,6 +24,9 @@ import {
 
 const instruments = createInstruments();
 
+const LOOP_CYCLE_DURATION = `${DEFAULT_GRID_RESOLUTION}n`;
+const HATS_CYCLE_DURATION = `${DEFAULT_GRID_RESOLUTION / 4}n`;
+
 const loop_kicks = new Tone.Loop(
     (() => {
         // Private variable for ticker
@@ -36,19 +39,25 @@ const loop_kicks = new Tone.Loop(
             if (t === 0) kick_pattern = _sample(kicks);
             if (kick_pattern[t]) {
                 // Play kick beat
-                instruments.sampler.triggerAttackRelease(NOTE_KICK, time);
+                instruments.sampler.triggerAttackRelease(
+                    NOTE_KICK,
+                    LOOP_CYCLE_DURATION
+                );
             }
 
             // Randomly switch pattern on the 0
             if (t === 0) snares_pattern = _sample(snares);
             if (snares_pattern[t]) {
                 // Play snare beat
-                instruments.sampler.triggerAttackRelease(NOTE_CLAP, time);
+                instruments.sampler.triggerAttackRelease(
+                    NOTE_CLAP,
+                    LOOP_CYCLE_DURATION
+                );
             }
             tick += 1;
         };
     })(),
-    "16n"
+    LOOP_CYCLE_DURATION
 ).start(0);
 
 const loop_hats = new Tone.Loop((time) => {
@@ -69,7 +78,7 @@ const loop_hats = new Tone.Loop((time) => {
     }
 
     MC_HATS.next();
-}, "4n").start(0);
+}, HATS_CYCLE_DURATION).start(0);
 
 Tone.Transport.start();
 

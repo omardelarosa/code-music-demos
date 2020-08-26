@@ -49,7 +49,7 @@ class: center, middle
 
 class: center, middle
 
-### One Way To Do Music Randomly...
+### One Way To Do Music Purely Stochastically...
 
 ---
 
@@ -80,7 +80,7 @@ class: center, middle
 iframeURL: /demos/scale-tones/index.html
 iframeSelector: .scale-tones-frame
 
-### Random Tones from a Scale
+### Random Tones from the Same Scale
 
 <iframe class="scale-tones-frame" width="100%" src="/blank.html" frameborder=0></iframe>
 
@@ -103,7 +103,31 @@ class: center, middle
 
 class: center, middle
 
-### By Using _Markov Chains_
+### By Using Graphs
+
+TODO: Add Graph
+
+---
+
+class: center, middle
+
+### Each Musical Event is a Node in the Graph Representing a State
+
+TODO: Add States
+
+---
+
+class: center, middle
+
+### We Will Begin With Finite States (a.k.a. Finite Machine State)
+
+![](https://ds055uzetaobb.cloudfront.net/brioche/uploads/rHpmPKo6lq-fsm_prob1.png?width=1200)
+
+---
+
+class: center, middle
+
+### And their special case _Markov Chains_
 
 ---
 
