@@ -4,6 +4,8 @@ iframeSelector: .frame-808-1
 
 # Making Music With Code
 
+![](https://vignette.wikia.nocookie.net/chrono-trigger/images/1/12/Gato_chrono_trigger-0.png/revision/latest/scale-to-width-down/340?cb=20161214172804&path-prefix=es)
+
 <iframe src="/blank.html" width="0" height="0" class="frame-808-1" frameborder="0"></iframe>
 
 ???
@@ -13,6 +15,52 @@ Sound check. Reset clock before starting.
 
 class: center, middle
 
+# What is This?
+
+---
+
+class: top, left
+
+# What is This?
+
+--
+
+- An overview of **algorithmic composition** with hints of AI/ML
+
+--
+- Focusing on **AOT** (*Ahead of Time*) style
+    - A type of process-music where sequences and sounds are generated using computer programs (aka code)
+    - written in advance
+    - coding is not part of the performance
+--
+
+- Not on **Live** style
+    - <img src="https://www.vectorform.com/wp-content/uploads/2016/10/algorave-detroit_thumb-1024x600.jpg" width="150px" />
+    - Coding is part of the performance
+    - See also:
+        - [SuperCollider](https://supercollider.github.io/)
+        - [SonicPi](https://sonic-pi.net/)
+        - [TidalCycles](https://tidalcycles.org/index.php/Welcome)
+
+---
+
+class: top, left
+
+# What is This?
+
+- Slides are available on Github as Markdown.
+
+--
+
+- Examples written in JavaScript and Python
+
+    - <img src="https://cxl.com/wp-content/uploads/2019/09/image3.png" width=200 />
+
+
+---
+
+class: center, middle
+
 # Who Am I?
 
 ---
@@ -21,27 +69,91 @@ class: center, middle
 
 --
 
--   I'm **[omar delarosa](https://omardelarosa.com)**.
+-   I'm **[omar delarosa](https://omardelarosa.com)**. 👋
 
 --
 
--   I'm a Tech Lead on the Search Data Science Team at Grubhub.
+-   I'm a Tech Lead on the Search Data Science Team at Grubhub. 🍕🌮
 
 --
 
--   I play music in my spare time.
+-   I play music in my spare time. 🎸 🎹
+
+--
+
+-   I took some music theory courses in college. 🤷‍♂️
+
+--
+
+-   I put music on [SoundCloud](https://soundcloud.com/ioximusic) and [YouTube](https://www.youtube.com/omardelarosa) sometimes.
 
 ---
 
 class: center, middle
 
-# What is Music?
+# Why This?
+
+---
+class: left, top
+
+# Why This?
+
+--
+
+- Lots of people know how to write code. 💻
+
+--
+
+- Lots of people play music. 🎸
+
+--
+
+- So why not do both at once? 🤝
+
+--
+
+- Here are some ideas 🤔
+
+---
+
+class: left, top
+
+# Agenda
+
+- Basics 👶
+
+--
+
+    - Music Theory 🎶
+
+--
+    - Music Graphs 🕸
+
+--
+    - Markov Chains ⛓
+
+--
+
+- Advanced 👴
+
+--
+
+    - Vectorizing Music ♾
+
+--
+    - Machine Learning and Music 🤖
 
 ---
 
 class: center, middle
 
-## Organized Sound Waves
+# What is Music? 🤔
+
+---
+
+class: center, middle
+
+## Sound Waves
 
 <img src="https://images.vexels.com/media/users/3/145868/isolated/preview/395e11dc92884b535d825403bc12cb04-sound-wave-sharp-by-vexels.png" width=400 />
 
@@ -49,7 +161,7 @@ class: center, middle
 
 class: center, middle
 
-### One Way To Do Music Purely Stochastically...
+### Individual Frequencies Are Perceived as Tones
 
 ---
 
@@ -63,15 +175,28 @@ iframeSelector: .random-tones-frame
 
 ---
 
-class: center, middle
+class: left, top
 
-### Yuck.
+### Special Frequencies
 
----
+--
 
-class: center, middle
+- Frequences like `440hz` are named **notes** such as `A4` [(more info)](https://pages.mtu.edu/~suits/notefreqs.html)
 
-## Can We Do Better?
+--
+
+- Exact tunings can vary by instrument and styles
+
+--
+    - See also:
+        - [*equal temperment*](https://en.wikipedia.org/wiki/Equal_temperament)
+        - [*microtonal music*](https://en.wikipedia.org/wiki/Microtonal_music)
+
+--
+
+- Definitions:
+    - a **note** is named tone <img src="https://i.imgur.com/Oq5SzEq.png" width=300 />
+    - a **scale** is ordered set of notes <img src="https://i.imgur.com/mu2XHAd.png" width=300 />
 
 ---
 
@@ -80,32 +205,123 @@ class: center, middle
 iframeURL: /demos/scale-tones/index.html
 iframeSelector: .scale-tones-frame
 
-### Random Tones from the Same Scale
+### Random Named Notes from the Same Scale
 
 <iframe class="scale-tones-frame" width="100%" src="/blank.html" frameborder=0></iframe>
 
-???
-Avoid talking over synths
+---
+
+class: center, middle
+
+### Harmony
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Harmonic_partials_on_strings.svg/250px-Harmonic_partials_on_strings.svg.png" width=400 />
+
+---
+
+class: left, top
+
+## Harmony
+
+--
+
+- Relationships between sound waves
+
+--
+
+- Often occurs when multiple waves oscillate at whole number ratios with each other
+
+- Definitions:
+
+--
+    -   **melody** - a sequence of tones over time
+        - <img src="https://i.imgur.com/EJZeByT.png" width=300 />
+    -   **chord** - tones at the same time, named after the component **notes**
+        - <img src="https://camo.githubusercontent.com/9dacb4e285e739eccd0a67894cd812bc070651b9/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3234313239392f323436313335352f30333631626165652d616637362d313165332d396665342d3535663734356532646230362e706e67" width=200 />
+    - **chord progression** - a sequence of chords over time:
+        - <img src="https://i.imgur.com/QRjNIda.png" width=300 />
+
+---
+class: center, top
+iframeURL: /demos/808/index.html
+iframeSelector: .frame-808
+
+### Rhythm
+
+<iframe src="/blank.html" width="100%" height="100%" class="frame-808" frameborder="0"></iframe>
+
+---
+
+### Rhythm
+
+-   **duration** - how long a tone lasts
+
+-   **beat** - a single unit of rhythm <img src="https://i.imgur.com/cpjlCGz.png" width=50 />
+
+-   **measure** - a regularly spaced group of beats <img src="https://i.imgur.com/Ow5xhm0.png" width=300 />
+
+
+
+---
+
+### Rhythm & Fractions
+
+-   Durations are all described as fractions of a **measure**
+
+--
+
+-   **1/4** Note <img src="https://i.imgur.com/ChUoGvo.png" width=200 />
+
+--
+
+-   **1/8** Note <img src="https://i.imgur.com/E5SC08v.png" width=200 />
+
+--
+
+-   **1/16** Note <img src="https://i.imgur.com/ALcpf8n.png" width=200 />
+
+---
+
+### Fun With Fractions
+
+-   Not all are multiples of 2.
+
+--
+
+-   Some interesting things happen when you mix up durations where the denominator of the fraction is a multiple of 3.
+
+<img src="https://i.imgur.com/OuujOEg.png" width=300 />
+
+--
+
+-   This is common in generes such as hip hop.
+
+
+---
+class: center, middle
+
+## Harmony & Rhythm = Pitch & Time
+
+<img src="/assets/img/pianoroll_01.png" width=400 />
+
+*Chopin's **Etudes, Opus 10, No.1** as a pianoroll plot*
+
+<iframe width="100" src="https://www.youtube.com/embed/JRgQgr4-at8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
 class: center, middle
 
-### Better.
+### Graphs
+
+TODO: Add Viz Here
+
 
 ---
 
 class: center, middle
 
-### We can do better yet.
-
----
-
-class: center, middle
-
-### By Using Graphs
-
-TODO: Add Graph
+### Music Components as Nodes in a Graph
 
 ---
 
@@ -162,7 +378,7 @@ Avoid talking over synths
 
 --
 
--   Markov chain models can be "generated" ML-style from a corpus text (or a MIDI file)
+-   Markov chain transition matrices "learned" ML-style from a corpus text (or a MIDI file)
 
 --
 
@@ -170,132 +386,7 @@ Avoid talking over synths
 
 ---
 
-class: center, middle
-
-## Slide Scope Creep
-
-#### (Not what this talk is about)
-
----
-
-class: center, middle
-iframeURL: /demos/808/index.html
-iframeSelector: .frame-808-geez
-
-## What Does This Have To Do With Hip Hop?
-
-<iframe src="/blank.html" width="0" height="0" class="frame-808-geez" frameborder="0"></iframe>
-
----
-
-class: middle, center
-
-# Rhythm, Harmony and Computation:
-
-#### A Brief History
-
----
-
-class: center, middle
-
-# 2000 B.C. to 1980s:
-
-### Harmony, Rhythm and Music Theory:
-
----
-
-### Harmony
-
---
-
--   **tone** - a unit of sound (aka a **note**) <img src="https://i.imgur.com/Oq5SzEq.png" width=300 />
-
---
-
--   **scale** - a ranked _Set_ of pitched tones <img src="https://i.imgur.com/mu2XHAd.png" width=300 />
-
---
-
--   **melody** - a sequence of tones over time <img src="https://i.imgur.com/EJZeByT.png" width=300 />
-
----
-
-### Harmony
-
---
-
--   **chord** - a group of tones played in (or close to) unison <img src="https://i.imgur.com/R1gBVQL.png" width=300 />
-
---
-
--   **progression** - a sequence of chords over time <img src="https://i.imgur.com/QRjNIda.png" width=300 />
-
----
-
-### Rhythm
-
--   **beat** - a single unit of rhythm <img src="https://i.imgur.com/cpjlCGz.png" width=50 />
-
--   **measure** - a regularly spaced group of beats <img src="https://i.imgur.com/Ow5xhm0.png" width=300 />
-
--   **duration** - how long a tone lasts
-
----
-
-### Rhythm & Durations as Fractions
-
--   Durations are all described as fractions of a **measure**
-
---
-
--   **1/4** Note <img src="https://i.imgur.com/ChUoGvo.png" width=200 />
-
---
-
--   **1/8** Note <img src="https://i.imgur.com/E5SC08v.png" width=200 />
-
---
-
--   **1/16** Note <img src="https://i.imgur.com/ALcpf8n.png" width=200 />
-
----
-
-### Durations as Fractions
-
--   Not all are multiples of 2.
-
---
-
--   Some interesting things happen when you mix up durations where the denominator of the fraction is a multiple of 3.
-
-<img src="https://i.imgur.com/OuujOEg.png" width=300 />
-
---
-
--   This is common in hip hop beats.
-
----
-
-class: middle, center
-
-# 1980s to Now
-
-### Rhythm and Computation
-
----
-
-iframeURL: /demos/808/index.html
-iframeSelector: .frame-808
-
-### Roland TR-808
-
-#### The classic drum machine of hip hop
-
-<iframe src="/blank.html" width="100%" height="100%" class="frame-808" frameborder="0"></iframe>
-
----
-
-# Rhythm and Computation
+# Rhythm as Code
 
 #### Beat Grids
 
@@ -553,6 +644,168 @@ const G = {
 
 -   `MarkovChain` is a data model and thus framework/library agnostic.
 
+
+---
+
+class: center, middle
+
+# Advanced Topics
+
+<img src="https://media.giphy.com/media/5D6pAHiFdAAww/giphy.gif" width=400>
+
+---
+class: center, middle
+
+## Remember Pitch & Time?
+
+<img src="/assets/img/pianoroll_01.png" width=400 />
+
+*Chopin's **Etudes, Opus 10, No.1** as a pianoroll plot*
+
+<iframe width="100" src="https://www.youtube.com/embed/JRgQgr4-at8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+class: center, top
+
+## Let's Turn That on Its Side
+
+<br />
+<img src="/assets/img/pianoroll_01.png" width=400 style="transform: rotate(90deg);" />
+
+---
+
+class: center, middle
+
+# Discrete Note Spaces
+
+---
+
+class: center, middle
+
+## 1-D Row Vector Note States
+
+<img src="/assets/img/PianoToVector1.svg" width=450 />
+
+---
+
+class: center, middle
+
+## Stacked Row Vectors
+
+Let *s* = a given state, *t* = a point in time and *i* = a note in some scale.
+
+<img src="/assets/img/vector_01.png" width=450 />
+
+⬇
+
+<img src="/assets/img/vector_02.png" width=450 />
+
+2-D Matrices Representing *Pitch* (Columns) and *Time* (Rows)
+
+---
+
+class: center, middle
+
+# Now Let's Get Creative
+
+<img src="https://media.giphy.com/media/PY8wElng9cygE/giphy.gif" width=400 />
+
+---
+
+class: center, middle
+
+# Hypercube Music
+
+<img src="/assets/img/hypercube_00.gif" width=400 />
+
+---
+
+class: center, middle
+
+# Walking a Hypercube Graph
+
+<img src="/assets/img/hypercube_walk.png" width=500 />
+
+When scaled up to an 8-D hypercube this can easily represent any diatonic scale such as C Major or B minor.
+
+---
+
+# Hypercube Music Example
+
+And arpeggiator sequence of nearest neighbor "chord nodes" on an 8-D hypercube:
+
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/882546211%3Fsecret_token%3Ds-VEWClRbOIUF&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ioximusic" title="ioxi" target="_blank" style="color: #cccccc; text-decoration: none;">ioxi</a> · <a href="https://soundcloud.com/ioximusic/hypercube-arpeggiator-loops/s-VEWClRbOIUF" title="Hypercube Arpeggiator Loops" target="_blank" style="color: #cccccc; text-decoration: none;">Hypercube Arpeggiator Loops</a></div>
+
+
+---
+
+class: center, middle
+
+# Cellular Automata Music
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif" width=300 />
+
+---
+class: center, top
+
+# Cellular Automata Music
+
+Generate row vectors using CA update rules:
+
+<img src="/assets/img/1D_CA.svg" width=600 />
+
+<br/>
+
+Stack them to form music state matrices:
+
+<img src="https://plus.maths.org/content/sites/plus.maths.org/files/articles/2019/budd/rule_90.png" width=350 />
+
+
+---
+
+class: center, top
+
+# Cellular Automata Music
+
+Sample notes from the state matrices to make melodies or chords:
+
+<img src="https://github.com/omardelarosa/tendril/raw/master/docs/tendril.gif" width=450 />
+
+---
+
+class: center, top
+
+# Cellular Automata Music
+
+Example 1: CA Piano
+
+<img src="/assets/img/pianoroll_02.png" width=300 />
+
+<iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/767229769%3Fsecret_token%3Ds-htqttgkY8Ty&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ioximusic" title="ioxi" target="_blank" style="color: #cccccc; text-decoration: none;">ioxi</a> · <a href="https://soundcloud.com/ioximusic/tendrill-in-c-minor/s-htqttgkY8Ty" title="Tendril (in C Minor)" target="_blank" style="color: #cccccc; text-decoration: none;">Tendril (in C Minor)</a></div>
+
+[code](https://github.com/omardelarosa/tendril)
+
+---
+
+class: center, top
+
+# Cellular Automata Music
+
+Example 2: Wolfram Tones
+
+<a href="https://tones.wolfram.com/generate/G7sEXbFOGuTIaHlZsyuwxUnoShs8PRKuzIgYMm3YpzqpXiEc" />
+    <img src="/assets/img/wolfram_tones.png" width=400 />
+</a>
+
+---
+
+class: center, middle
+
+# Machine Learning Music
+
+<img src="https://vignette.wikia.nocookie.net/chrono-trigger/images/1/12/Gato_chrono_trigger-0.png/revision/latest/scale-to-width-down/340?cb=20161214172804&path-prefix=es" width=300 />
+
 ---
 
 iframeURL: /public/sqcr-demo/html/matrix-16x8.html
@@ -564,7 +817,7 @@ iframeSelector: .matrix-16x8
 
 -   [Tone.js - full features JS code library](https://tonejs.github.io/)
 -   [vis.js - dataviz library](http://visjs.org/)
--   [sqcr - a JS sequencer server I made to run some of the code in these slides](https://github.com/omardelarosa/sqcr)
+-   [Yotam Mann](https://yotammann.info/)
 -   [Chris Wilson - "A Tale of Two Clocks"](https://www.html5rocks.com/en/tutorials/audio/scheduling/#toc-usingsettimeout)
 -   [Andrew Sorensen - "The Concert Programmer"](https://www.youtube.com/watch?v=yY1FSsUV-8c)
 -   [Sam Aaron - "Programming as Performance"](https://www.youtube.com/watch?v=TK1mBqKvIyU)

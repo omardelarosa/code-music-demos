@@ -37,6 +37,7 @@ function init() {
     const loop = new Tone.Loop((time) => {
         // triggered every eighth note.
         note = rand();
+        const noteName = new Tone.Frequency(note, "midi").toNote();
         t += 0.5;
         // console.log("now: ", now);
         synth.triggerAttackRelease(note, "8n");
