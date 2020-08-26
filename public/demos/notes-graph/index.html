@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>scale-tones - demo</title>
+    <title>notes-graph - demo</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="/styles.css"></link>
     <link rel="stylesheet" type="text/css" media="all" href="/lib/common/grid.css"></link>
+    <link rel="stylesheet" type="text/css" media="all" href="/lib/common/graph.css"></link>
     <link rel="stylesheet" type="text/css" media="all" href="/lib/common/global.css"></link>
 
     <link rel="stylesheet" type="text/css" media="all" href="/lib/matrix-16x8/styles.css"></link>
     <link rel="stylesheet" type="text/css" media="all" href="/lib/sqcr-demo/slides.css"></link>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.44/Tone.js" integrity="sha512-iS3y4sBZP69RAaTxQA/qq4ryBOT3lCv4tWqu++zT5H9sCfSQK52sPHDiXD99N85pbh9cEITvTKETXLPUh21UGA==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
 <style>
 .frequency {
     font-size: 2.0em;
@@ -19,9 +22,9 @@
 }
 </style>
 </head>
-<body>
-    <div class='frequency'></div>
-    <script src="/viz/scale-tones/index.js" type="module"></script>
+<body class='demo'>
+    <div id='graph'></div>
+    <script src="/demos/notes-graph/index.js" type="module"></script>
     <div class='play-button'><img class="play-icon" src="/assets/img/play-button-svgrepo-com.svg"/></div>
 </body>
 

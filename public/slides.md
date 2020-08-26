@@ -54,7 +54,7 @@ class: center, middle
 ---
 
 class: center, middle
-iframeURL: /viz/random-tones/index.html
+iframeURL: /demos/random-tones/index.html
 iframeSelector: .random-tones-frame
 
 ### Random Tone Frequencies
@@ -77,7 +77,7 @@ class: center, middle
 
 class: center, middle
 
-iframeURL: /viz/scale-tones/index.html
+iframeURL: /demos/scale-tones/index.html
 iframeSelector: .scale-tones-frame
 
 ### Random Tones from a Scale
@@ -120,7 +120,7 @@ _A Markov chain is "a stochastic model describing a sequence of possible events 
 ---
 
 class: center, top
-iframeURL: /viz/notes-graph/index.html
+iframeURL: /demos/notes-graph/index.html
 iframeSelector: .scale-tones-graph-frame
 
 #### Markov Chaining of Tones in a Scale
@@ -155,7 +155,7 @@ class: center, middle
 ---
 
 class: center, middle
-iframeURL: /public/sqcr-demo/html/808.html
+iframeURL: /demos/808/index.html
 iframeSelector: .frame-808-geez
 
 ## What Does This Have To Do With Hip Hop?
@@ -260,7 +260,7 @@ class: middle, center
 
 ---
 
-iframeURL: /public/sqcr-demo/html/808.html
+iframeURL: /demos/808/index.html
 iframeSelector: .frame-808
 
 ### Roland TR-808
