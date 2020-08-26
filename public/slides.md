@@ -2,7 +2,7 @@ class: center, middle
 iframeURL: /demos/808/index.html
 iframeSelector: .frame-808-1
 
-# Making Self-Generating Hip Hop in JS
+# Making Music With Code
 
 <iframe src="/blank.html" width="0" height="0" class="frame-808-1" frameborder="0"></iframe>
 
@@ -25,7 +25,7 @@ class: center, middle
 
 --
 
--   I'm a Lead Software Engineer at Grubhub Seamless. (We're hiring.)
+-   I'm a Tech Lead on the Search Data Science Team at Grubhub.
 
 --
 
