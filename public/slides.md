@@ -306,44 +306,44 @@ class: center, middle
 
 *Chopin's **Etudes, Opus 10, No.1** as a pianoroll plot*
 
-<iframe width="100" src="https://www.youtube.com/embed/JRgQgr4-at8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="external" width="300" src="https://www.youtube.com/embed/JRgQgr4-at8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
 class: center, middle
 
-### Graphs
+# Graphs
 
-TODO: Add Viz Here
+<img src="/assets/img/graph-example.png" width=300 />
 
-
----
-
-class: center, middle
-
-### Music Components as Nodes in a Graph
 
 ---
 
 class: center, middle
 
-### Each Musical Event is a Node in the Graph Representing a State
+### Music & Graphs
 
-TODO: Add States
+Music sequences can be thought of as directed walks along the **edges** of a graph where each discrete\* **state** is a node.
+
+<img src="/assets/img/3_state_piano.svg" width=600 />
+
+Each **state** (*Sn*) can be a single note or a beat or any music element in a sequence of musical events.
+
+<br />
+
+<br />
+
+<span style="font-size: 0.55em; font-style: italic">*Assume each state in music is discrete.  Further discussions of microtonality and certain continuous musical spaces are out of scope in this section.</span>
 
 ---
 
 class: center, middle
 
-### We Will Begin With Finite States (a.k.a. Finite Machine State)
+### Music & Finite State Machines
 
-![](https://ds055uzetaobb.cloudfront.net/brioche/uploads/rHpmPKo6lq-fsm_prob1.png?width=1200)
+<img src="/assets/img/fnm_01.png" width=400 />
 
----
-
-class: center, middle
-
-### And their special case _Markov Chains_
+The entire action space of a sequence of music can thus be described using a **finite state machine**.
 
 ---
 
@@ -351,42 +351,88 @@ class: center, middle
 
 # Markov Chain
 
+The most straightforward way to produce **algorithmic compositions**.
+
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Markovkate_01.svg/220px-Markovkate_01.svg.png)
 
-_A Markov chain is "a stochastic model describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event"_
+_"a stochastic model describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event"_
 
 [from Wikipedia](https://en.wikipedia.org/wiki/Markov_chain)
+
+---
+class: center, middle
+
+# Markov
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/AAMarkov.jpg/220px-AAMarkov.jpg" width=200 />
+
+*Andrey Markov, namesake of Markov chains and more.*
 
 ---
 
 class: center, top
 iframeURL: /demos/notes-graph/index.html
-iframeSelector: .scale-tones-graph-frame
+iframeSelector: .scale-tones-graph-frame2
 
 #### Markov Chaining of Tones in a Scale
 
-<iframe class="scale-tones-graph-frame" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
+<iframe class="scale-tones-graph-frame2" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
 
 ???
 Avoid talking over synths
 
 ---
 
-# Markov Chain
+class: center, top
+iframeURL: /demos/chords-graph/index.html
+iframeSelector: .scale-chords-graph-frame
 
--   Is like a state machine for gamblers
+#### Markov Chaining of Chords in a Scale
+
+<iframe class="scale-chords-graph-frame" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
+
+???
+Avoid talking over synths
+
+---
+
+class: center, top
+iframeURL: /demos/beats-graph/index.html
+iframeSelector: .beats-graph-frame
+
+#### Markov Chaining of Beat Durations
+
+<iframe class="beats-graph-frame" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
+
+---
+
+### Markov Chains (With Benefits)
 
 --
 
--   Markov chain transition matrices "learned" ML-style from a corpus text (or a MIDI file)
+-   Markov chain transition matrices can be learned from a corpus text (or a MIDI file)
 
 --
 
 -   Data can be represented and stored easily as structured data formats such as JSON
 
+--
+
+-   Can extend to more complex, multi-state transition matrices, but this is outside the scope of this prez.
+
+
+
 ---
 
-# Rhythm as Code
+class: middle, center
+
+# Music & Code
+
+<img src="/assets/img/ghost_in_the_shell_fingers.gif" width=400 />
+
+---
+
+### Rhythm as Code
 
 #### Beat Grids
 
@@ -487,52 +533,6 @@ const snare_sequence = [
 playParallel(kicks_sequence, snare_sequence);
 ```
 
----
-
-class: center, middle
-
-# Or we can do better with Markov Chains
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Markovkate_01.svg/220px-Markovkate_01.svg.png)
-
----
-
-class: center, top
-iframeURL: /demos/notes-graph/index.html
-iframeSelector: .scale-tones-graph-frame2
-
-#### Markov Chaining of Tones in a Scale
-
-<iframe class="scale-tones-graph-frame2" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
-
-???
-Avoid talking over synths
-
----
-
-class: center, top
-iframeURL: /demos/chords-graph/index.html
-iframeSelector: .scale-chords-graph-frame
-
-#### Markov Chaining of Chords in a Scale
-
-<iframe class="scale-chords-graph-frame" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
-
-???
-Avoid talking over synths
-
----
-
-class: center, top
-iframeURL: /demos/beats-graph/index.html
-iframeSelector: .beats-graph-frame
-
-#### Markov Chaining of Beat Durations
-
-<iframe class="beats-graph-frame" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
-
----
-
 ### Simple Markov Chain Implementation
 
 ```javascript
@@ -608,15 +608,15 @@ const mc = new MarkovChain(G, CHORDS);
 ## Markov Chain of Rhythm Patterns
 
 ```javascript
-const M = 96; // MIDI Ticks in a measure
 
+// Tuples of duration & number of beats
 const HATS = [
-    [M / 16, 4],
-    [M / 12, 3],
-    [M / 24, 6],
-    [M / 32, 4],
-    [M / 48, 6],
-    [M / 64, 8],
+    [16, 4],
+    [12, 3],
+    [24, 6],
+    [32, 4],
+    [48, 6],
+    [64, 8],
 ];
 
 // Favors steady 1/16 notes -- common in hip hop
@@ -634,16 +634,14 @@ const G = {
 
 # And So...
 
--   Tones, Melodies Chords, Beats, Measures, etc. can be thought of as "states" in a markov chin
+-   Music is a graph.
+
+--
+-   Music sequences are walks along the edges of those graphs.
 
 --
 
--   This can create more natural sounding compositions than brute force randomization.
-
---
-
--   `MarkovChain` is a data model and thus framework/library agnostic.
-
+-   Markov chains are cool.
 
 ---
 
@@ -662,7 +660,7 @@ class: center, middle
 
 *Chopin's **Etudes, Opus 10, No.1** as a pianoroll plot*
 
-<iframe width="100" src="https://www.youtube.com/embed/JRgQgr4-at8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="external" width="300" src="https://www.youtube.com/embed/JRgQgr4-at8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
@@ -735,7 +733,7 @@ When scaled up to an 8-D hypercube this can easily represent any diatonic scale 
 
 And arpeggiator sequence of nearest neighbor "chord nodes" on an 8-D hypercube:
 
-<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/882546211%3Fsecret_token%3Ds-VEWClRbOIUF&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ioximusic" title="ioxi" target="_blank" style="color: #cccccc; text-decoration: none;">ioxi</a> · <a href="https://soundcloud.com/ioximusic/hypercube-arpeggiator-loops/s-VEWClRbOIUF" title="Hypercube Arpeggiator Loops" target="_blank" style="color: #cccccc; text-decoration: none;">Hypercube Arpeggiator Loops</a></div>
+<iframe class="external" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/882546211%3Fsecret_token%3Ds-VEWClRbOIUF&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ioximusic" title="ioxi" target="_blank" style="color: #cccccc; text-decoration: none;">ioxi</a> · <a href="https://soundcloud.com/ioximusic/hypercube-arpeggiator-loops/s-VEWClRbOIUF" title="Hypercube Arpeggiator Loops" target="_blank" style="color: #cccccc; text-decoration: none;">Hypercube Arpeggiator Loops</a></div>
 
 
 ---
@@ -782,7 +780,7 @@ Example 1: CA Piano
 
 <img src="/assets/img/pianoroll_02.png" width=300 />
 
-<iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/767229769%3Fsecret_token%3Ds-htqttgkY8Ty&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ioximusic" title="ioxi" target="_blank" style="color: #cccccc; text-decoration: none;">ioxi</a> · <a href="https://soundcloud.com/ioximusic/tendrill-in-c-minor/s-htqttgkY8Ty" title="Tendril (in C Minor)" target="_blank" style="color: #cccccc; text-decoration: none;">Tendril (in C Minor)</a></div>
+<iframe class="external" width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/767229769%3Fsecret_token%3Ds-htqttgkY8Ty&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ioximusic" title="ioxi" target="_blank" style="color: #cccccc; text-decoration: none;">ioxi</a> · <a href="https://soundcloud.com/ioximusic/tendrill-in-c-minor/s-htqttgkY8Ty" title="Tendril (in C Minor)" target="_blank" style="color: #cccccc; text-decoration: none;">Tendril (in C Minor)</a></div>
 
 [code](https://github.com/omardelarosa/tendril)
 
@@ -792,7 +790,7 @@ class: center, top
 
 # Cellular Automata Music
 
-Example 2: Wolfram Tones
+(see [Wolfram Tones](https://tones.wolfram.com/generate/G7sEXbFOGuTIaHlZsyuwxUnoShs8PRKuzIgYMm3YpzqpXiEc) for more elaborate examples)
 
 <a href="https://tones.wolfram.com/generate/G7sEXbFOGuTIaHlZsyuwxUnoShs8PRKuzIgYMm3YpzqpXiEc" />
     <img src="/assets/img/wolfram_tones.png" width=400 />

@@ -11,9 +11,12 @@ export function bindAudioListener(selector) {
         Tone.context.resume();
     }
 
-    document.querySelector(selector).addEventListener("mousedown", function () {
-        if (Tone.context.state !== "running") {
-            Tone.context.resume();
-        }
-    });
+    const $el = document.querySelector(selector);
+    if ($el) {
+        $el.addEventListener("mousedown", function () {
+            if (Tone.context.state !== "running") {
+                Tone.context.resume();
+            }
+        });
+    }
 }
