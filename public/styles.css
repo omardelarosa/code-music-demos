@@ -55,8 +55,16 @@ h3 {
     /* color: white; */
     font-family: "Helvetica", sans-serif;
     text-align: center;
+    /* display: flex;
+    justify-content: space-around; */
+    text-align: center;
+    padding-top: 5px;
 }
 
 .play-icon {
     width: 32px;
+}
+
+.code-icon {
+    width: 40px;
 }

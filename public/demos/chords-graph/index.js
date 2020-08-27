@@ -52,7 +52,7 @@ const G = {
     6: [4],
 };
 
-const MC = new MarkovChain(G, NOTES, 0);
+const MC = new MarkovChain(G, CHORDS, 0);
 
 // create an array with nodes
 function makeNodes(obj, labels) {
@@ -176,7 +176,7 @@ function init() {
         // triggered every eighth note.
         selectedNodeId = MC.nextID();
         network.selectNodes([selectedNodeId]);
-        note = CHORDS[selectedNodeId];
+        note = NOTES[selectedNodeId];
         const notes = [
             note,
             NOTES[selectedNodeId + 2],

@@ -26,7 +26,7 @@ function init() {
         synth.triggerAttackRelease(note, "8n");
         $el.innerHTML = `${Math.round(
             new Tone.Frequency(note, "note").valueOf()
-        )}hz = ${note}`;
+        )}hz ➡ ${note}`;
     }, "4n").start(0);
     Tone.Transport.start();
     Tone.Transport.bpm.value = DEFAULT_SEQUENCE_BPM;
