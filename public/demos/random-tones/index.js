@@ -11,7 +11,7 @@ function init() {
     let $el = document.querySelector(".frequency");
 
     function rand() {
-        return Math.round(Math.random() * 60) + 100;
+        return Math.round(Math.random() * 1000) + 40;
     }
 
     const synthOpts = {
@@ -39,11 +39,9 @@ function init() {
         note = rand();
         const noteName = new Tone.Frequency(note, "midi").toNote();
         t += 0.5;
-        // console.log("now: ", now);
+
         synth.triggerAttackRelease(note, "8n");
-        $el.innerHTML = `${Math.round(
-            new Tone.Frequency(note, "midi").valueOf()
-        )}hz`;
+        $el.innerHTML = `${note}hz`;
     }, "4n").start(0);
 
     Tone.Transport.start();
