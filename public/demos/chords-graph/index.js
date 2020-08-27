@@ -176,7 +176,7 @@ function init() {
         // triggered every eighth note.
         selectedNodeId = MC.nextID();
         network.selectNodes([selectedNodeId]);
-        note = NOTES[selectedNodeId];
+        note = CHORDS[selectedNodeId];
         const notes = [
             note,
             NOTES[selectedNodeId + 2],

@@ -374,7 +374,7 @@ class: center, top
 iframeURL: /demos/notes-graph/index.html
 iframeSelector: .scale-tones-graph-frame2
 
-#### Markov Chaining of Tones in a Scale
+#### Note Markov Chain
 
 <iframe class="scale-tones-graph-frame2" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
 
@@ -387,7 +387,7 @@ class: center, top
 iframeURL: /demos/chords-graph/index.html
 iframeSelector: .scale-chords-graph-frame
 
-#### Markov Chaining of Chords in a Scale
+#### Chord Markov Chain
 
 <iframe class="scale-chords-graph-frame" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
 
@@ -400,9 +400,19 @@ class: center, top
 iframeURL: /demos/beats-graph/index.html
 iframeSelector: .beats-graph-frame
 
-#### Markov Chaining of Beat Durations
+#### Beat Markov Chain
 
 <iframe class="beats-graph-frame" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
+
+---
+
+class: center, top
+iframeURL: /demos/drake-graph/index.html
+iframeSelector: .drake-graph-frame
+
+#### Drake Markov Chain
+
+<iframe class="drake-graph-frame" width="100%" height="70%" src="/blank.html" frameborder=0></iframe>
 
 ---
 
