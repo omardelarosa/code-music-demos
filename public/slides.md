@@ -21,42 +21,59 @@ class: center, middle
 
 class: top, left
 
-# What is This?
+# What this is
 
 --
 
-- An overview of **algorithmic composition** with hints of AI/ML
+- A spiritual sequel of a demo/talk I gave at [Brooklyn.js](http://brooklynjs.com/) back in 2018 about making hip hop with JavaScript.
 
 --
-- Focusing on **AOT** (*Ahead of Time*) style
-    - A type of process-music where sequences and sounds are generated using computer programs (aka code)
-    - written in advance
-    - coding is not part of the performance
+
+- An overview of **algorithmic composition** with hints of AI/ML I'm generalizing by calling "code music"
+
 --
 
-- Not on **Live** style
-    - <img src="https://www.vectorform.com/wp-content/uploads/2016/10/algorave-detroit_thumb-1024x600.jpg" width="150px" />
-    - Coding is part of the performance
-    - See also:
+- A relatively "low-code" talk about approaches without too much emphasis on a particular programming language.
+
+--
+
+- A collection of data viz, tech demos & experiments using WebAudio API and various JavaScript/Python tools.
+
+--
+
+- Focusing on **AOT** (*Ahead of Time*) code music style
+
+    - A type of process-music where sequences and sounds are generated using computer programs (aka code) in advance.
+
+    - coding is *not* part of the performance
+
+---
+class: center, middle
+
+# What this is *not*
+
+<img src="https://static01.nyt.com/images/2019/10/06/fashion/00clubcode-1/merlin_161398722_6c45769a-7664-47a0-af32-cd4c07b3ce8a-superJumbo.jpg?quality=90&auto=webp" width="500" />
+
+
+---
+
+# What this is *not*
+
+- Focused on **live** code music style
+
+    - Where coding is part of the performance
+
+- If you are interested in *live* code music...
+
+    - Check out these tools:
         - [SuperCollider](https://supercollider.github.io/)
         - [SonicPi](https://sonic-pi.net/)
         - [TidalCycles](https://tidalcycles.org/index.php/Welcome)
 
----
-
-class: top, left
-
-# What is This?
-
-- Slides are available on Github as Markdown.
-
---
-
-- Examples written in JavaScript and Python
-
-    - <img src="https://cxl.com/wp-content/uploads/2019/09/image3.png" width=200 />
-
-
+    - Or these people:
+        - [Sam Aaron](https://twitter.com/samaaron)
+        - [Andrew Sorensen](https://twitter.com/digego)
+        - [Zach Krall](https://twitter.com/zachkrall)
 ---
 
 class: center, middle
@@ -745,6 +762,9 @@ And arpeggiator sequence of nearest neighbor "chord nodes" on an 8-D hypercube:
 
 <iframe class="external" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/882546211%3Fsecret_token%3Ds-VEWClRbOIUF&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ioximusic" title="ioxi" target="_blank" style="color: #cccccc; text-decoration: none;">ioxi</a> · <a href="https://soundcloud.com/ioximusic/hypercube-arpeggiator-loops/s-VEWClRbOIUF" title="Hypercube Arpeggiator Loops" target="_blank" style="color: #cccccc; text-decoration: none;">Hypercube Arpeggiator Loops</a></div>
 
+<div class='play-button'>
+    <a href="https://github.com/omardelarosa/nlp-midi"><img class="code-icon icon" src="/assets/img/embed2.svg"/></a>
+</div>
 
 ---
 
@@ -792,7 +812,9 @@ Example 1: CA Piano
 
 <iframe class="external" width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/767229769%3Fsecret_token%3Ds-htqttgkY8Ty&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ioximusic" title="ioxi" target="_blank" style="color: #cccccc; text-decoration: none;">ioxi</a> · <a href="https://soundcloud.com/ioximusic/tendrill-in-c-minor/s-htqttgkY8Ty" title="Tendril (in C Minor)" target="_blank" style="color: #cccccc; text-decoration: none;">Tendril (in C Minor)</a></div>
 
-[code](https://github.com/omardelarosa/tendril)
+<div class='play-button'>
+    <a href="https://github.com/omardelarosa/tendril"><img class="code-icon icon" src="/assets/img/embed2.svg"/></a>
+</div>
 
 ---
 
@@ -854,10 +876,13 @@ class: center, top
 
 ## Chord2Vec
 
-Chords can be "suggested" from single note inputs by selecting a nearest neighbors (randomly or otherwise.)
+Chords are expanded from single note inputs by selecting a nearest neighbor (randomly or by whatever other means)
 
 <iframe class="external" width="560" height="315" src="https://www.youtube.com/embed/SWG2akIh-7g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<div class='play-button'>
+    <a href="https://github.com/omardelarosa/nlp-midi"><img class="code-icon icon" src="/assets/img/embed2.svg"/></a>
+</div>
 
 ---
 
@@ -872,7 +897,7 @@ Chords can be "suggested" from single note inputs by selecting a nearest neighbo
 -   Hypercubes
 
 --
--   Language models
+-   NLP tools
 
 --
 

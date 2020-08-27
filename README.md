@@ -2,12 +2,19 @@
 
 ![robot](https://vignette.wikia.nocookie.net/chrono-trigger/images/1/12/Gato_chrono_trigger-0.png/revision/latest/scale-to-width-down/340?cb=20161214172804&path-prefix=es)
 
-## Description
+## Background
 
-This repo services two purposes:
+This repo serves a few purposes:
 
-1. It contains all the slides from a talk called "Making Music With Code" (originally presented on 8/27/2020).
-2. It brings together a couple of tech demos of data viz + experiments with WebAudio API into a single place.
+1. It contains all the slides from a talk called _"Making Music With Code"_ (originally presented on 8/27/2020).
+2. It brings together a couple of misc. tech demos, data viz & experiments with WebAudio API into a single place.
+3. To iterate on a talk I gave at [Brooklyn.JS](http://brooklynjs.com/) back in 2018 about making hip hop beats using JavaScript. (Original slides are still hosted at [http://markov-music.now.sh/](http://markov-music.now.sh/) and [on github](https://github.com/omardelarosa/markov-music-js).)
+
+The hosted form of this presentation is available via Netlify at:
+
+[https://code-music.netlify.app/](https://code-music.netlify.app/)
+
+The presentation was built using a modified version of [Remark.js](https://github.com/gnab/remark).
 
 ## Overview
 
