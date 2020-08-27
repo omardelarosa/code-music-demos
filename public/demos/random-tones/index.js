@@ -11,7 +11,7 @@ function init() {
     let $el = document.querySelector(".frequency");
 
     function rand() {
-        return Math.round(Math.random() * 1000) + 40;
+        return Math.round(Math.random() * 600) + 40;
     }
 
     const synthOpts = {
