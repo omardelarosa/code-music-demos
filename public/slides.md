@@ -816,28 +816,89 @@ class: center, middle
 
 ---
 
-iframeURL: /public/sqcr-demo/html/matrix-16x8.html
-iframeSelector: .matrix-16x8
+class: center, top
 
-### Thanks
+## Chord2Vec
 
-<iframe class="matrix-16x8" width="560" height="315" src="/blank.html" frameborder="0"></iframe>
+Using a [data set of MIDI files](https://www.kaggle.com/saikayala/jazz-ml-ready-midi), transform notes into chord-name strings and then vectors.
 
--   [Tone.js - full features JS code library](https://tonejs.github.io/)
--   [vis.js - dataviz library](http://visjs.org/)
--   [Yotam Mann](https://yotammann.info/)
--   [Chris Wilson - "A Tale of Two Clocks"](https://www.html5rocks.com/en/tutorials/audio/scheduling/#toc-usingsettimeout)
--   [Andrew Sorensen - "The Concert Programmer"](https://www.youtube.com/watch?v=yY1FSsUV-8c)
--   [Sam Aaron - "Programming as Performance"](https://www.youtube.com/watch?v=TK1mBqKvIyU)
+<img src="/assets/img/Chord2Vec.svg" width=200 />
+
+(see [word2vec](https://en.wikipedia.org/wiki/Word2vec) for more information on how this works.)
 
 ---
 
 class: center, top
 
-## Slides:
+## Chord2Vec
 
-### [markov-music.now.sh](https://markov-music.now.sh)
+This results in a vector space made of each chord in your dataset
 
-## Slides Code:
+<img src="/assets/img/jazz-space.gif" width=500 />
 
-### [github.com/omardelarosa/markov-music-js](github.com/omardelarosa/markov-music-js)
+(Each point in this space can be thought of as a **node** in a **graph**)
+
+---
+
+class: center, top
+
+## Chord2Vec
+
+Each chord has some number *K* nearest neighbors in this space.
+
+<img src="/assets/img/ChordNeighbors.svg" width=300 />
+
+
+---
+class: center, top
+
+## Chord2Vec
+
+Chords can be "suggested" from single note inputs by selecting a nearest neighbors (randomly or otherwise.)
+
+<iframe class="external" width="560" height="315" src="https://www.youtube.com/embed/SWG2akIh-7g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+---
+
+# And So...
+
+-   Beyond Markov Chains there are many other ways to compose algorithmically.
+
+--
+-   You can use cellular automata
+
+--
+-   Hypercubes
+
+--
+-   Language models
+
+--
+
+-   Whatever you want
+
+---
+
+iframeURL: /public/sqcr-demo/html/matrix-16x8.html
+iframeSelector: .matrix-16x8
+
+## Links
+
+-   Slides:
+    -   [code-music.netlify.app](https://code-music.netlify.app/)
+    -   [omardelarosa/code-music-demos](https://github.com/omardelarosa/code-music-demos)
+
+-   Other Links:
+    -   [Tone.js - full features JS code library](https://tonejs.github.io/)
+    -   [vis.js - dataviz library](http://visjs.org/)
+    -   [Yotam Mann](https://yotammann.info/)
+    -   [Chris Wilson - "A Tale of Two Clocks"](https://www.html5rocks.com/en/tutorials/audio/scheduling/#toc-usingsettimeout)
+    -   [Andrew Sorensen - "The Concert Programmer"](https://www.youtube.com/watch?v=yY1FSsUV-8c)
+    -   [Sam Aaron - "Programming as Performance"](https://www.youtube.com/watch?v=TK1mBqKvIyU)
+
+---
+
+class: center, middle
+
+# Thanks!
