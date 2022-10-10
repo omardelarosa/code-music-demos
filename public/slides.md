@@ -560,7 +560,10 @@ const snare_sequence = [
 playParallel(kicks_sequence, snare_sequence);
 ```
 
-### Simple Markov Chain Implementation
+---
+## Generative Beats
+
+#### Simple Markov Chain Implementation
 
 ```javascript
 class MarkovChain {
@@ -614,7 +617,8 @@ const mc = new MarkovChain(G, NOTES);
 ## Markov Chain of Chords
 
 ```javascript
-const CHORDS = ["C maj", "D min", "E min", "F maj", "G maj", "A min", "B dim"];
+const CHORDS = [
+    "C maj", "D min", "E min", "F maj", "G maj", "A min", "B dim"];
 
 // Favors I <-> IV, V -> I cadences
 const G = {
@@ -835,7 +839,7 @@ class: center, middle
 
 # Machine Learning Music
 
-<img src="https://vignette.wikia.nocookie.net/chrono-trigger/images/1/12/Gato_chrono_trigger-0.png/revision/latest/scale-to-width-down/340?cb=20161214172804&path-prefix=es" width=300 />
+<img src="https://c.tenor.com/g3em3aXU638AAAAi/chrono-trigger-mic.gif" width="300px" />
 
 ---
 
@@ -892,12 +896,15 @@ Chords are expanded from single note inputs by selecting a nearest neighbor (ran
 -   Beyond Markov Chains there are many other ways to compose algorithmically.
 
 --
+
 -   You can use cellular automata
 
 --
+
 -   Hypercubes
 
 --
+
 -   NLP tools
 
 --
