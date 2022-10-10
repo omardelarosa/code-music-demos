@@ -4,7 +4,7 @@ iframeSelector: .frame-808-1
 
 # Making Music With Code
 
-![](https://vignette.wikia.nocookie.net/chrono-trigger/images/1/12/Gato_chrono_trigger-0.png/revision/latest/scale-to-width-down/340?cb=20161214172804&path-prefix=es)
+<img src="https://c.tenor.com/g3em3aXU638AAAAi/chrono-trigger-mic.gif" width="300px" />
 
 <iframe src="/blank.html" width="0" height="0" class="frame-808-1" frameborder="0"></iframe>
 
@@ -90,7 +90,7 @@ class: center, middle
 
 --
 
--   I'm a Tech Lead on the Search Data Science Team at Grubhub. 🍕🌮
+-   I'm a Senior Software Engineer at Spotify. 🎶
 
 --
 
@@ -98,7 +98,11 @@ class: center, middle
 
 --
 
--   I took some music theory courses in college. 🤷‍♂️
+-   I studied (almost) a minor's-worth of music theory courses. 👶🎼
+
+--
+
+-   I studied a master's-worth of computer science courses. 🤖🎓
 
 --
 
@@ -340,15 +344,11 @@ class: center, middle
 
 ### Music & Graphs
 
-Music sequences can be thought of as directed walks along the **edges** of a graph where each discrete\* **state** is a node.
+Music sequences can be thought of as directed walks along the **edges** of a graph of the state-space in which each discrete\* **state** is a node.
 
 <img src="/assets/img/3_state_piano.svg" width=600 />
 
 Each **state** (*Sn*) can be a single note or a beat or any music element in a sequence of musical events.
-
-<br />
-
-<br />
 
 <span style="font-size: 0.55em; font-style: italic">*Assume each state in music is discrete.  Further discussions of microtonality and certain continuous musical spaces are out of scope in this section.</span>
 
@@ -664,6 +664,7 @@ const G = {
 -   Music is a graph.
 
 --
+
 -   Music sequences are walks along the edges of those graphs.
 
 --
