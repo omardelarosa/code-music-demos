@@ -919,6 +919,7 @@ iframeSelector: .matrix-16x8
 ## Links
 
 -   Slides:
+    -   [codemusic.net](https://codemusic.net/)
     -   [code-music.netlify.app](https://code-music.netlify.app/)
     -   [omardelarosa/code-music-demos](https://github.com/omardelarosa/code-music-demos)
 
