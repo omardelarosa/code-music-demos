@@ -10,13 +10,15 @@ import {
 // Tone.js stuff
 export function createInstruments() {
     const freeverb = new Tone.Freeverb({
-        wet: 0.8,
+        wet: 0.9,
+        roomSize: 0.8,
         decay: "8n",
     }).toDestination();
 
     const reverb = new Tone.Reverb({
-        wet: 0.2,
-        decay: "8n",
+        wet: 0.9,
+        roomSize: 0.8,
+        decay: "8n"
     }).toDestination();
 
     const delay = new Tone.FeedbackDelay(0.1);
@@ -43,7 +45,7 @@ export function createInstruments() {
                 attack: 0.1,
             },
         })
-        // .chain(tremolo, freeverb)
+        .chain(tremolo, freeverb)
         .toDestination();
 
     const leadSynth = new Tone.PolySynth({
@@ -59,7 +61,7 @@ export function createInstruments() {
                 attack: 0.1,
             },
         })
-        // .chain(delay, freeverb)
+        .chain(delay, freeverb)
         // .connect(reverb)
         // .connect(feedbackDelay)
         .toDestination();
@@ -85,6 +87,7 @@ export function createInstruments() {
         }
     )
         .connect(reverb)
+        // .connect(vol)
         .toDestination();
 
     return {
