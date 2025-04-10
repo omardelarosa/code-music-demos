@@ -106,7 +106,7 @@ class: center, middle
 
 --
 
--   I put music on [SoundCloud](https://soundcloud.com/ioximusic) and [YouTube](https://www.youtube.com/omardelarosa) sometimes.
+-   I put music on [Instagram](https://www.instagram.com/delarosa.wav/) and [YouTube](https://www.youtube.com/omardelarosa) sometimes.
 
 ---
 
@@ -121,19 +121,19 @@ class: left, top
 
 --
 
-- Lots of people know how to write code. 💻
+- Maybe you know how to code 💻
 
 --
 
-- Lots of people play music. 🎸
+- ... but you don't play any instruments
 
 --
 
-- So why not do both at once? 🤝
+- ... and you want to make music 🎸
 
 --
 
-- Here are some ideas 🤔
+- This offers some ideas 🤔
 
 ---
 
@@ -891,6 +891,19 @@ Chords are expanded from single note inputs by selecting a nearest neighbor (ran
 
 ---
 
+class: center, top
+
+## LLM Music via Suno Prompt
+
+<img src="/assets/img/suno.png" width=300 />
+
+Prompt: `Make a chill track in the style of lofi hip hop`
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3bvF05oRoEI?si=AGEC72WsDhuXu0KY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+---
+
 # And So...
 
 -   Beyond Markov Chains there are many other ways to compose algorithmically.
@@ -909,7 +922,7 @@ Chords are expanded from single note inputs by selecting a nearest neighbor (ran
 
 --
 
--   Whatever you want
+-   LLMs and beyond
 
 ---
 
