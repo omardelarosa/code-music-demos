@@ -21,7 +21,7 @@ class: center, middle
 
 class: top, left
 
-# What this is
+# What Is This
 
 --
 
@@ -29,51 +29,12 @@ class: top, left
 
 --
 
-- An overview of **algorithmic composition** with hints of AI/ML I'm generalizing by calling "code music"
-
---
-
-- A relatively "low-code" talk about approaches without too much emphasis on a particular programming language.
+- An overview of **algorithmic composition** with some ML approaches covered at the end.
 
 --
 
 - A collection of data viz, tech demos & experiments using WebAudio API and various JavaScript/Python tools.
 
---
-
-- Focusing on **AOT** (*Ahead of Time*) code music style
-
-    - A type of process-music where sequences and sounds are generated using computer programs (aka code) in advance.
-
-    - coding is *not* part of the performance
-
----
-class: center, middle
-
-# What this is *not*
-
-<img src="https://static01.nyt.com/images/2019/10/06/fashion/00clubcode-1/merlin_161398722_6c45769a-7664-47a0-af32-cd4c07b3ce8a-superJumbo.jpg?quality=90&auto=webp" width="500" />
-
-
----
-
-# What this is *not*
-
-- Focused on **live** code music style
-
-    - Where coding is part of the performance
-
-- If you are interested in *live* code music...
-
-    - Check out these tools:
-        - [SuperCollider](https://supercollider.github.io/)
-        - [SonicPi](https://sonic-pi.net/)
-        - [TidalCycles](https://tidalcycles.org/index.php/Welcome)
-
-    - Or these people:
-        - [Sam Aaron](https://twitter.com/samaaron)
-        - [Andrew Sorensen](https://twitter.com/digego)
-        - [Zach Krall](https://twitter.com/zachkrall)
 ---
 
 class: center, middle
@@ -90,7 +51,7 @@ class: center, middle
 
 --
 
--   I'm a Senior Software Engineer at Spotify. 🎶
+-   I'm a Senior Engineer at Spotify. 🎶
 
 --
 
@@ -106,7 +67,7 @@ class: center, middle
 
 --
 
--   I put music on [SoundCloud](https://soundcloud.com/ioximusic) and [YouTube](https://www.youtube.com/omardelarosa) sometimes.
+-   I put music on [Instagram](https://www.instagram.com/delarosa.wav/) and [YouTube](https://www.youtube.com/omardelarosa) sometimes.
 
 ---
 
@@ -115,25 +76,26 @@ class: center, middle
 # Why This?
 
 ---
+
 class: left, top
 
 # Why This?
 
 --
 
-- Lots of people know how to write code. 💻
+- Maybe you know how to code 💻
 
 --
 
-- Lots of people play music. 🎸
+- ... but you don't play any instruments
 
 --
 
-- So why not do both at once? 🤝
+- ... and you want to make music 🎸
 
 --
 
-- Here are some ideas 🤔
+- This offers some ideas 🤔
 
 ---
 
@@ -891,6 +853,18 @@ Chords are expanded from single note inputs by selecting a nearest neighbor (ran
 
 ---
 
+class: center, top
+
+## LLM Music via Suno Prompt
+
+<img src="/assets/img/suno.png" width=300 />
+
+Prompt: `Make a chill track in the style of lofi hip hop`
+
+<iframe class="external" width="560" height="315" src="https://www.youtube.com/embed/3bvF05oRoEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
 # And So...
 
 -   Beyond Markov Chains there are many other ways to compose algorithmically.
@@ -909,7 +883,7 @@ Chords are expanded from single note inputs by selecting a nearest neighbor (ran
 
 --
 
--   Whatever you want
+-   LLMs and beyond
 
 ---
 
