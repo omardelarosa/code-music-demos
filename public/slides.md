@@ -899,8 +899,7 @@ class: center, top
 
 Prompt: `Make a chill track in the style of lofi hip hop`
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3bvF05oRoEI?si=AGEC72WsDhuXu0KY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<iframe class="external" width="560" height="315" src="https://www.youtube.com/embed/3bvF05oRoEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
